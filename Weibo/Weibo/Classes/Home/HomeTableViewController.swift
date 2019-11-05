@@ -8,83 +8,43 @@
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
+class HomeTableViewController: BaseViewController {
 
+    let titleBtn: TitleButton = TitleButton()
+    
+    private lazy var popoverAnimator:  PopoverAnimator = PopoverAnimator { [weak self] (isPop) in
+        self?.titleBtn.isSelected = isPop
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        visitorView.addRotateAnimate()
+        guard isLogin else {
+            return
+        }
+        //登录后设置导航栏l内容
+        setUpNavigstion()
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+}
+//设置home界面的navigation的UI
+extension HomeTableViewController {
+    //设置登录后的navigation内容
+    private func setUpNavigstion() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: "navigationbar_friendattention")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: "navigationbar_pop")
+        titleBtn.setTitle("coderwhy", for: .normal)
+        titleBtn.addTarget(self, action: #selector(titleBtnClick), for: .touchUpInside)
+        navigationItem.titleView = titleBtn
+        
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+}
+//监听方法
+extension HomeTableViewController {
+    @objc private func titleBtnClick(titleButton: TitleButton) {
+        titleButton.isSelected = !titleButton.isSelected
+        let popView = PopViewController()
+        popView.modalPresentationStyle = .custom//保证跳转视图的底层视图不被移除
+        popView.transitioningDelegate = popoverAnimator//设置转场代理实现自定义转场
+        popoverAnimator.popViewFrame = CGRect(x: 100, y: 80, width: 200, height: 250)
+        present(popView, animated: true, completion: nil)
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

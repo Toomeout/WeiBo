@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopViewController" customModule="Weibo" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popover_background" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFY-Gj-of0">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rho-Qn-kmA">
+                    <rect key="frame" x="5" y="56" width="404" height="798"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="rho-Qn-kmA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="6LP-8T-WyK"/>
+                <constraint firstItem="IFY-Gj-of0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JeN-t5-4RH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rho-Qn-kmA" secondAttribute="bottom" constant="8" id="Oqo-Cx-AIO"/>
+                <constraint firstItem="rho-Qn-kmA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="R22-T3-xoM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IFY-Gj-of0" secondAttribute="bottom" id="ZHA-xG-IPJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rho-Qn-kmA" secondAttribute="trailing" constant="5" id="cSf-Ud-Ilz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IFY-Gj-of0" secondAttribute="trailing" id="nuE-dr-cqz"/>
+                <constraint firstItem="IFY-Gj-of0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tlM-sb-1gb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="popover_background" width="217" height="49"/>
+    </resources>
+</document>
