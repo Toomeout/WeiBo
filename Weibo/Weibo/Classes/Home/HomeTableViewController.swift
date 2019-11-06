@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class HomeTableViewController: BaseViewController {
 
     let titleBtn: TitleButton = TitleButton()
