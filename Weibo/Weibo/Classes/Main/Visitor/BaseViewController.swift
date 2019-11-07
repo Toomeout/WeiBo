@@ -10,7 +10,7 @@ import UIKit
 
 class BaseViewController: UITableViewController {
 
-    var isLogin = true
+    var isLogin = false
     lazy var visitorView: VisitorView = VisitorView.visitorView()
     override func loadView() {
         isLogin ? super.loadView() :setUpVisitorView()
@@ -39,6 +39,10 @@ extension BaseViewController {
         print("register")
     }
     @objc private func loginBtnClick() {
-        print("login")
+        let oAuthViewController = OAuthViewController()
+        
+        let oAuthNavigation = UINavigationController(rootViewController: oAuthViewController)
+        
+        present(oAuthNavigation, animated: true, completion: nil)
     }
 }
