@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Alamofire (4.9.1)
+  - MJRefresh (3.2.2)
   - SDWebImage (5.2.5):
     - SDWebImage/Core (= 5.2.5)
   - SDWebImage/Core (5.2.5)
@@ -24,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - Alamofire
+  - MJRefresh
   - SDWebImage
   - SnapKit
   - SVProgressHUD
@@ -32,6 +34,7 @@ SPEC REPOS:
   trunk:
     - AFNetworking
     - Alamofire
+    - MJRefresh
     - SDWebImage
     - SnapKit
     - SVProgressHUD
@@ -39,10 +42,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  MJRefresh: 72a46ecaa2a0feaf48fc5198dff95f25f8bb27c6
   SDWebImage: 4eabf2fa6695c95c47724214417a9c036c965e4a
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 63bbe1f8125b8cdfb3a825399c916437ca63258f
+PODFILE CHECKSUM: 08007bf00d219fa9c8becb0273028c003654acaa
 
 COCOAPODS: 1.8.4

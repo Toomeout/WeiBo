@@ -10,7 +10,7 @@ import UIKit
 
 class BaseViewController: UITableViewController {
 
-    var isLogin = false
+    var isLogin = UserAccountViewModel.shareInstance.isLogin
     lazy var visitorView: VisitorView = VisitorView.visitorView()
     override func loadView() {
         isLogin ? super.loadView() :setUpVisitorView()

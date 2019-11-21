@@ -53,3 +53,19 @@ extension NetWorkTool {
         }
     }
 }
+//请求首页数据
+extension NetWorkTool {
+    func loadStatus(since_id: Int, max_id: Int, finish: @escaping (_ result: [[String: AnyObject]]?, _ error: Error?) -> ()) {
+        let urlStr = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let access_token = UserAccountViewModel.shareInstance.account?.access_token!
+        let parameters = ["access_token": access_token, "since_id": "\(since_id)", "max_id": "\(max_id)"]
+        NetWorkTool.shareInstance.request(method: .GET, urlString: urlStr, paramters: parameters as [String : AnyObject]) { (result, error) in
+            
+            guard let resultDic = result as? [String : AnyObject] else {
+                finish(nil, error)
+                return
+            }
+            finish(resultDic["statuses"] as? [[String: AnyObject]], error)
+        }
+    }
+}

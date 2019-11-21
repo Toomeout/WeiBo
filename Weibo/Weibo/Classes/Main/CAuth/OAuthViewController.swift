@@ -83,9 +83,9 @@ extension OAuthViewController {
                 print("没有获取数据")
                 return
             }
-            print(resultData)
             let person = UserAccount(dict: resultData)
-            print(person)
+            //2.00JI9mBHUmbhqBc5b0f286bc5azipB
+            self.loadUserInfo(user: person)
         }
     }
     private func loadUserInfo(user: UserAccount) {
@@ -98,15 +98,24 @@ extension OAuthViewController {
         NetWorkTool.shareInstance.loadUserInfo(access_token: accessToken, uid: uId) { (result, error) in
             if error != nil {
                 print(error as Any)
-                return
+                print("网络请求发生错误")
             }
             guard let resultData = result else {
                 print("没有获取数据")
                 return
             }
+            print(resultData)
             user.screen_name = resultData["screen_name"] as? String
             user.avatar_large = resultData["avatar_large"] as? String
             
+            //将用户信息保存
+            //try! NSKeyedArchiver.archivedData(withRootObject: user, requiringSecureCoding: false)
+            NSKeyedArchiver.archiveRootObject(user, toFile: UserAccountViewModel.shareInstance.accountPath)
+            UserAccountViewModel.shareInstance.account = user
+            self.dismiss(animated: false, completion: {
+                SVProgressHUD.dismiss()
+                UIApplication.shared.keyWindow?.rootViewController = WelcomeViewController()
+            })
         }
     }
 }
