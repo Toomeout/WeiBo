@@ -35,6 +35,13 @@
 		F14864C6236B21A100EBFC46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14864C4236B21A100EBFC46 /* LaunchScreen.storyboard */; };
 		F16ECEFF2377B9DD000BC13A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16ECEFE2377B9DD000BC13A /* User.swift */; };
 		F16ECF012377CAFD000BC13A /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16ECF002377CAFD000BC13A /* StatusViewModel.swift */; };
+		F17EB14D2386BE4100590737 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB14B2386BE4100590737 /* ComposeViewController.swift */; };
+		F17EB14E2386BE4100590737 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17EB14C2386BE4100590737 /* ComposeViewController.xib */; };
+		F17EB1502386C47C00590737 /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB14F2386C47C00590737 /* ComposeTitleView.swift */; };
+		F17EB1522386CEC900590737 /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB1512386CEC900590737 /* ComposeTextView.swift */; };
+		F17EB1552387EEB100590737 /* PicPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB1542387EEB100590737 /* PicPickerView.swift */; };
+		F17EB1582388027300590737 /* PicPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17EB1562388027300590737 /* PicPickerCell.swift */; };
+		F17EB1592388027300590737 /* PicPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17EB1572388027300590737 /* PicPickerCell.xib */; };
 		F1812F632373CA840092EE7C /* appConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1812F622373CA840092EE7C /* appConfig.swift */; };
 		F1A4082723742E590000D61F /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A4082523742E590000D61F /* OAuthViewController.swift */; };
 		F1A4082823742E590000D61F /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1A4082623742E590000D61F /* OAuthViewController.xib */; };
@@ -88,6 +95,13 @@
 		F14864C7236B21A100EBFC46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F16ECEFE2377B9DD000BC13A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F16ECF002377CAFD000BC13A /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		F17EB14B2386BE4100590737 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		F17EB14C2386BE4100590737 /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		F17EB14F2386C47C00590737 /* ComposeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
+		F17EB1512386CEC900590737 /* ComposeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
+		F17EB1542387EEB100590737 /* PicPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerView.swift; sourceTree = "<group>"; };
+		F17EB1562388027300590737 /* PicPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerCell.swift; sourceTree = "<group>"; };
+		F17EB1572388027300590737 /* PicPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicPickerCell.xib; sourceTree = "<group>"; };
 		F1812F622373CA840092EE7C /* appConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appConfig.swift; sourceTree = "<group>"; };
 		F1A4082523742E590000D61F /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		F1A4082623742E590000D61F /* OAuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
@@ -185,8 +199,8 @@
 		F1190A0923706AC5009B8F63 /* UIPopover */ = {
 			isa = PBXGroup;
 			children = (
-				F1190A0A23706B00009B8F63 /* PopViewController.swift */,
 				F1190A0B23706B00009B8F63 /* PopViewController.xib */,
+				F1190A0A23706B00009B8F63 /* PopViewController.swift */,
 				F1190A0E237077B5009B8F63 /* PopPresentationController.swift */,
 				F1190A10237129BD009B8F63 /* PopoverAnimator.swift */,
 			);
@@ -247,6 +261,28 @@
 			path = Weibo;
 			sourceTree = "<group>";
 		};
+		F17EB14A2386BE0E00590737 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				F17EB1532387EE8E00590737 /* PicPicker */,
+				F17EB14B2386BE4100590737 /* ComposeViewController.swift */,
+				F17EB14C2386BE4100590737 /* ComposeViewController.xib */,
+				F17EB14F2386C47C00590737 /* ComposeTitleView.swift */,
+				F17EB1512386CEC900590737 /* ComposeTextView.swift */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		F17EB1532387EE8E00590737 /* PicPicker */ = {
+			isa = PBXGroup;
+			children = (
+				F17EB1542387EEB100590737 /* PicPickerView.swift */,
+				F17EB1562388027300590737 /* PicPickerCell.swift */,
+				F17EB1572388027300590737 /* PicPickerCell.xib */,
+			);
+			path = PicPicker;
+			sourceTree = "<group>";
+		};
 		F1A4083323769F570000D61F /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +305,7 @@
 		F1F7C4AF236B24A800379501 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F17EB14A2386BE0E00590737 /* Compose */,
 				F11909F3236ED88E009B8F63 /* Tools */,
 				F1F7C4B0236B265000379501 /* Main */,
 				F1F7C4B1236B265B00379501 /* Meassge */,
@@ -402,7 +439,9 @@
 				F1F04D04236B330400C0ADFF /* Profile.storyboard in Resources */,
 				F1F04D02236B320A00C0ADFF /* Discover.storyboard in Resources */,
 				F1190A0D23706B00009B8F63 /* PopViewController.xib in Resources */,
+				F17EB1592388027300590737 /* PicPickerCell.xib in Resources */,
 				F1190A03236F0B6D009B8F63 /* VisitorView.xib in Resources */,
+				F17EB14E2386BE4100590737 /* ComposeViewController.xib in Resources */,
 				F12CD97B2382A4B3000C74E1 /* PicViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,17 +499,21 @@
 				F12CD9752382A459000C74E1 /* PicCollectionView.swift in Sources */,
 				F1428A062372B67500514721 /* Common.swift in Sources */,
 				F1A408422376F2BA0000D61F /* DateExtension.swift in Sources */,
+				F17EB1582388027300590737 /* PicPickerCell.swift in Sources */,
 				F11909EF236EC342009B8F63 /* MainViewController.swift in Sources */,
 				F16ECEFF2377B9DD000BC13A /* User.swift in Sources */,
+				F17EB1522386CEC900590737 /* ComposeTextView.swift in Sources */,
 				F1190A0F237077B5009B8F63 /* PopPresentationController.swift in Sources */,
 				F1812F632373CA840092EE7C /* appConfig.swift in Sources */,
 				F134AA412381317200DD8716 /* HomeCell.swift in Sources */,
 				F1A40830237470AC0000D61F /* UserAccount.swift in Sources */,
 				F11909F8236ED8EC009B8F63 /* UIButtonExtension.swift in Sources */,
+				F17EB1552387EEB100590737 /* PicPickerView.swift in Sources */,
 				F14864BE236B219E00EBFC46 /* ViewController.swift in Sources */,
 				F1F7C4C4236B289500379501 /* DiscoverViewController.swift in Sources */,
 				F1F7C4C0236B285300379501 /* HomeTableViewController.swift in Sources */,
 				F11909FD236F096B009B8F63 /* BaseViewController.swift in Sources */,
+				F17EB14D2386BE4100590737 /* ComposeViewController.swift in Sources */,
 				F1F7C4C2236B287D00379501 /* ProfileViewController.swift in Sources */,
 				F12CD97A2382A4B3000C74E1 /* PicViewCell.swift in Sources */,
 				F1A4082723742E590000D61F /* OAuthViewController.swift in Sources */,
@@ -484,6 +527,7 @@
 				F1190A0823705EE9009B8F63 /* TitleButton.swift in Sources */,
 				F1A40832237699FF0000D61F /* UserAccountViewModel.swift in Sources */,
 				F1A4082A23744C1D0000D61F /* NetWorkTool.swift in Sources */,
+				F17EB1502386C47C00590737 /* ComposeTitleView.swift in Sources */,
 				F1F7C4C6236B28AB00379501 /* MessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

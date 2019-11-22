@@ -44,6 +44,8 @@ extension MainViewController {
  */
 extension MainViewController {
     @objc private func composeClick() {
-        print("composed")
+        let composeController = ComposeViewController()
+        let composeNav = UINavigationController(rootViewController: composeController)
+        present(composeNav, animated: true, completion: nil)
     }
 }

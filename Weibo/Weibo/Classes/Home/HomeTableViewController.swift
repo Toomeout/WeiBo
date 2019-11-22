@@ -12,7 +12,7 @@ import MJRefresh
 class HomeTableViewController: BaseViewController {
 
     let titleBtn: TitleButton = TitleButton()
-    
+    private lazy var tipLabel = UILabel()
     private lazy var popoverAnimator:  PopoverAnimator = PopoverAnimator { [weak self] (isPop) in
         self?.titleBtn.isSelected = isPop
     }
@@ -31,6 +31,7 @@ class HomeTableViewController: BaseViewController {
         //refreshControl = UIRefreshControl()//苹果刷新控制器
         setUpHeaderView()//设置刷新头
         setUpFooterView()//设置加载更多
+        setUpTipLabel()//设置提示label
     }
 }
 //设置home界面的navigation的UI
@@ -57,6 +58,15 @@ extension HomeTableViewController {
         header.setTitle("加载中...", for: .refreshing)
         tableView.mj_header = header
         tableView.mj_header?.beginRefreshing()//进入刷新
+    }
+    //设置提示标签
+    private func setUpTipLabel() {
+        navigationController?.navigationBar.insertSubview(tipLabel, at: 0)
+        tipLabel.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 32)
+        tipLabel.backgroundColor = UIColor.orange
+        tipLabel.textColor = UIColor.white
+        tipLabel.font = UIFont.systemFont(ofSize: 14)
+        tipLabel.isHidden = true
     }
 }
 //监听方法
@@ -127,9 +137,23 @@ extension HomeTableViewController {
             self.tableView.reloadData() //在主队列中刷星数据
             self.tableView.mj_header?.endRefreshing()//加载w完新的数据后停止刷新动作
             self.tableView.mj_footer?.endRefreshing()
+            self.showTipLabel(count: viewModel.count)
         }
     }
-
+    private func showTipLabel(count: Int) {
+        self.tipLabel.isHidden = false//显示label
+        self.tipLabel.text = count == 0 ? "没有新的微博" : "更新\(count)条微博"
+        self.tipLabel.textAlignment = .center
+        //动画
+        UIView.animate(withDuration: 1.0, animations: {
+            self.tipLabel.frame.origin.y = 44
+        }) { (bool) in
+            UIView.animate(withDuration: 1.0, delay: 1.5, options: [], animations: {
+            }, completion: { (_) in
+                self.tipLabel.frame.origin.y = 0
+            })
+        }
+    }
 }
 
 extension HomeTableViewController{

@@ -14,3 +14,7 @@ let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(appKey)&redi
 var code = "062acbff5cf59259d8e7e49c6d6df167"
 let accessToken = "https://api.weibo.com/oauth2/access_token"
 let userUrl = "https://api.weibo.com/2/users/show.json"
+
+
+let picPickerId = "picPickerId"
+let delPicPickerId = "delPicPickerId"
